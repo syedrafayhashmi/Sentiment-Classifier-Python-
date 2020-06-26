@@ -17,7 +17,10 @@ void loop() {
     SerialBT.write(Serial.read());
   }
   if (SerialBT.available()) {
-    Serial.write(SerialBT.read());
+    
+    int in = SerialBT.read();
+    Serial.write(in);
+    SerialBT.write(in);
   }
   delay(20);
 }
